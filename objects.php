@@ -1,9 +1,16 @@
 <?php
 
-$menu = $_POST['menu'];
+$menu = $_POST['menu']; // メニュー選択の結果を取得
 
-echo $menu;
+// echo $menu;
 
+if ($menu === '1') {
+    echo '1';
+} elseif ($menu === '2') {
+    echo '2';
+} elseif ($menu === '9') {
+    echo '9';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
