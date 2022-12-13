@@ -27,7 +27,7 @@
             <label for="purchase">購入日</label>
             <input type="date" name="purchase" id="purchase"><br>
 
-            <label for="check">チェックポイント</label>
+            <label for="checkPoint">チェックポイント</label>
             <input type="date" name="check" id="check"><br>
 
             <label for="place">保管場所</label>
