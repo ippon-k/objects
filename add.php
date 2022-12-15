@@ -17,7 +17,7 @@
 <body>
     <div>
         <h1>資産の登録</h1>
-        <form action="" method="post">
+        <form action="insert.php" method="post">
             <label for="name">品名</label>
             <input type="text" name="name" id="name"><br>
 
