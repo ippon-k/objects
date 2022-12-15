@@ -9,7 +9,7 @@ function h($str)
 //1.  DB接続します
 try {
     //Password:MAMP='root',XAMPP=''
-    $pdo = new PDO('mysql:dbname=gs_bm_table;charset=utf8;host=localhost', 'root', '');
+    $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
 } catch (PDOException $e) {
     exit('DBConnectError' . $e->getMessage());
 }

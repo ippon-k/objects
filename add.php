@@ -16,7 +16,7 @@
 
 <body>
     <div>
-        <h1>資産の登録</h1>
+        <h1>動産の登録</h1>
         <form action="insert.php" method="post">
             <label for="name">品名</label>
             <input type="text" name="name" id="name"><br>
@@ -24,29 +24,6 @@
             <label for="category">品目</label>
             <input type="text" name="category" id="category"><br>
 
-            <label for="purchase">購入日</label>
-            <input type="date" name="purchase" id="purchase"><br>
-
-            <!-- <label for="checkPoint">チェックポイント</label>
-            <input type="date" name="check" id="check"><br>
-
-            <label for="place">保管場所</label>
-            <input type="text" name="place" id="place"><br>
-
-            <label for="num">管理番号</label>
-            <input type="text" name="num" id="num"><br>
-
-            <label for="amortization">償却期間（年）</label>
-            <input type="number" name="amortization" id="amortization"><br>
-
-            <label for="amount">取得価額</label>
-            <input type="number" name="amount" id="amount"><br>
-
-            <label for="residual">残価</label>
-            <input type="number" name="residual" id="residual"><br>
-
-            <label for="others">その他</label>
-            <input type="text" name="others" id="others"><br> -->
 
             <input type="submit" value="send">
         </form>
@@ -55,3 +32,27 @@
 </body>
 
 </html>
+
+<!-- <label for="purchase">購入日</label>
+<input type="date" name="purchase" id="purchase"><br> -->
+
+<!-- <label for="checkPoint">チェックポイント</label>
+<input type="date" name="check" id="check"><br>
+
+<label for="place">保管場所</label>
+<input type="text" name="place" id="place"><br>
+
+<label for="num">管理番号</label>
+<input type="text" name="num" id="num"><br>
+
+<label for="amortization">償却期間（年）</label>
+<input type="number" name="amortization" id="amortization"><br>
+
+<label for="amount">取得価額</label>
+<input type="number" name="amount" id="amount"><br>
+
+<label for="residual">残価</label>
+<input type="number" name="residual" id="residual"><br>
+
+<label for="others">その他</label>
+<input type="text" name="others" id="others"><br> -->
