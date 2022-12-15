@@ -27,7 +27,7 @@
             <label for="purchase">購入日</label>
             <input type="date" name="purchase" id="purchase"><br>
 
-            <label for="checkPoint">チェックポイント</label>
+            <!-- <label for="checkPoint">チェックポイント</label>
             <input type="date" name="check" id="check"><br>
 
             <label for="place">保管場所</label>
@@ -46,7 +46,7 @@
             <input type="number" name="residual" id="residual"><br>
 
             <label for="others">その他</label>
-            <input type="text" name="others" id="others"><br>
+            <input type="text" name="others" id="others"><br> -->
 
             <input type="submit" value="send">
         </form>

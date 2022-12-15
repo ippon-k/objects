@@ -10,13 +10,13 @@
 
 //1. POSTデータ取得
 $name = $_POST['name'];
-$email = $_POST['email'];
-$content = $_POST['content'];
+$category = $_POST['category'];
+$purchase = $_POST['purchase'];
 
 //2. DB接続します
 try {
     //ID:'root', Password: xamppは 空白 ''
-    $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost', 'root', '');
+    $pdo = new PDO('mysql:dbname=gs_bm_table;charset=utf8;host=localhost', 'root', '');
 } catch (PDOException $e) {
     exit('DBConnectError:' . $e->getMessage());
 }
@@ -25,15 +25,15 @@ try {
 
 // 1. SQL文を用意
 $stmt = $pdo->prepare("INSERT INTO
-                        gs_an_table(id, name, email, content, date)
-                        VALUES(NULL, :name, :email, :content, sysdate() )");
+                        gs_bm_table(id, name, category, purchase, )
+                        VALUES(NULL, :name, :category, :purchase, )");
 
 //  2. バインド変数を用意
 // Integer 数値の場合 PDO::PARAM_INT
 // String文字列の場合 PDO::PARAM_STR
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->bindValue(':email', $email, PDO::PARAM_STR);
-$stmt->bindValue(':content', $content, PDO::PARAM_STR);
+$stmt->bindValue(':category', $category, PDO::PARAM_STR);
+$stmt->bindValue(':purchase', $purchase, PDO::PARAM_STR);
 
 //  3. 実行
 $status = $stmt->execute();
