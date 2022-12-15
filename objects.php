@@ -7,7 +7,7 @@ $menu = $_POST['menu']; // メニュー選択の結果を取得
 if ($menu === '1') {
     header('Location: add.php');
 } elseif ($menu === '2') {
-    echo '2';
+    header('Location: select.php');
 } elseif ($menu === '9') {
     echo '9';
 }
