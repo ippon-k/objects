@@ -70,8 +70,8 @@ if ($status == false) {
         <div class="container jumbotron"><?= $view ?></div>
     </div>
     <!-- Main[End] -->
-    <p><a href="index.html">return</a></p>
-    <p><a href="add.php">return</a></p>
+    <button><a href="index.html">to menu</a></button>
+    <button><a href="add.php">to add</a></button>
 
 
 </body>
