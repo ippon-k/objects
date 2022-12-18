@@ -33,6 +33,8 @@
 
             <label for="category">品目</label>
             <input type="text" name="category" id="category"><br>
+            <label for="purchase">購入日</label>
+            <input type="date" name="date" id="date"><br>
 
 
             <input type="submit" value="send">
@@ -43,8 +45,6 @@
 
 </html>
 
-<!-- <label for="purchase">購入日</label>
-<input type="date" name="purchase" id="purchase"><br> -->
 
 <!-- <label for="checkPoint">チェックポイント</label>
 <input type="date" name="check" id="check"><br>

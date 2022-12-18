@@ -11,6 +11,7 @@
 //1. POSTデータ取得
 $name = $_POST['name'];
 $category = $_POST['category'];
+$date = $_POST['date'];
 // $purchase = $_POST['purchase'];
 
 
@@ -26,15 +27,15 @@ try {
 
 // 1. SQL文を用意
 $stmt = $pdo->prepare("INSERT INTO
-                        gs_bm_table(id, name, category)
-                        VALUES(NULL, :name, :category)");
+                        gs_bm_table(id, name, category, date)
+                        VALUES(NULL, :name, :category, :date)");
 
 //  2. バインド変数を用意
 // Integer 数値の場合 PDO::PARAM_INT
 // String文字列の場合 PDO::PARAM_STR
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':category', $category, PDO::PARAM_STR);
-// $stmt->bindValue(':purchase', $purchase, PDO::PARAM_INT);
+$stmt->bindValue(':date', $date, PDO::PARAM_INT);
 
 // var_export($name . $category);
 // //  3. 実行

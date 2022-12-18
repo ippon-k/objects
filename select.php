@@ -28,7 +28,7 @@ if ($status == false) {
     //Selectデータの数だけ自動でループしてくれる
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
-        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['purchase']) . '</p>'; // .=は追加処理
+        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['date']) . '</p>'; // .=は追加処理
     }
 }
 ?>
