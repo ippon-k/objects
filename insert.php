@@ -12,6 +12,7 @@
 $name = $_POST['name'];
 $category = $_POST['category'];
 $date = $_POST['date'];
+var_dump($date);
 // $purchase = $_POST['purchase'];
 
 
