@@ -11,13 +11,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>objects</title>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="add.php">動産登録</a>
+                </div>
+            </div>
+        </nav>
+    </header>
     <div>
-        <h1>動産の登録</h1>
+        <h1>動産登録</h1>
         <form action="insert.php" method="post">
             <label for="name">品名</label>
             <input type="text" name="name" id="name"><br>
