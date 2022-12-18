@@ -16,16 +16,16 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="add.php">動産登録</a>
-                </div>
-            </div>
-        </nav>
-    </header>
     <div>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="add.php">動産登録</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
         <h1>動産登録</h1>
         <form action="insert.php" method="post">
             <label for="name">品名</label>
