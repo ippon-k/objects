@@ -12,7 +12,7 @@
 $name = $_POST['name'];
 $category = $_POST['category'];
 $date = $_POST['date'];
-var_dump($date);
+// var_dump($date);
 // $purchase = $_POST['purchase'];
 
 
@@ -36,7 +36,7 @@ $stmt = $pdo->prepare("INSERT INTO
 // String文字列の場合 PDO::PARAM_STR
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':category', $category, PDO::PARAM_STR);
-$stmt->bindValue(':date', $date, PDO::PARAM_INT);
+$stmt->bindValue(':date', $date, PDO::PARAM_STR);
 
 // var_export($name . $category);
 // //  3. 実行
