@@ -33,9 +33,15 @@
 
             <label for="category">品目</label>
             <input type="text" name="category" id="category"><br>
+
             <label for="purchase">購入日</label>
             <input type="date" name="date" id="date"><br>
 
+            <label for="place">保管場所</label>
+            <input type="text" name="place" id="place"><br>
+
+            <label for="checkPoint">チェックポイント</label>
+            <input type="date" name="check1" id="check1"><br>
 
             <input type="submit" value="send">
         </form>
@@ -46,13 +52,8 @@
 </html>
 
 
-<!-- <label for="checkPoint">チェックポイント</label>
-<input type="date" name="check" id="check"><br>
 
-<label for="place">保管場所</label>
-<input type="text" name="place" id="place"><br>
-
-<label for="num">管理番号</label>
+<!-- <label for="num">管理番号</label>
 <input type="text" name="num" id="num"><br>
 
 <label for="amortization">償却期間（年）</label>

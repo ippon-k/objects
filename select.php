@@ -28,8 +28,11 @@ if ($status == false) {
     //Selectデータの数だけ自動でループしてくれる
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
-        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['date']) . '</p>'; // .=は追加処理
+        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . $result['date'] . '/' . h($result['place']) . '/' . h($result['check1']) . '</p>'; // .=は追加処理
     }
+    // while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
+    //     $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['date']) . '</p>'; // .=は追加処理
+    // }
 }
 ?>
 
@@ -41,7 +44,7 @@ if ($status == false) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>動産表示</title>
+    <title>動産一覧</title>
     <link rel="stylesheet" href="css/range.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
