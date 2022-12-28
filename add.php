@@ -43,6 +43,21 @@
             <label for="checkPoint">チェックポイント</label>
             <input type="date" name="check1" id="check1"><br>
 
+            <label for="num">管理番号</label>
+            <input type="text" name="control_num" id="control_num"><br>
+
+            <label for="amortization_period">償却期間（年）</label>
+            <input type="number" name="amortization_period" id="amortization_period"><br>
+
+            <label for="amount">取得価額</label>
+            <input type="number" name="acquisition_cost" id="acquisition_cost"><br>
+
+            <label for="residual">残価</label>
+            <input type="number" name="residual_value" id="residual_value"><br>
+
+            <label for="others">その他</label>
+            <input type="text" name="others" id="others"><br>
+
             <input type="submit" value="send">
         </form>
         <p><a href="index.html">return</a></p>
@@ -50,20 +65,3 @@
 </body>
 
 </html>
-
-
-
-<!-- <label for="num">管理番号</label>
-<input type="text" name="num" id="num"><br>
-
-<label for="amortization">償却期間（年）</label>
-<input type="number" name="amortization" id="amortization"><br>
-
-<label for="amount">取得価額</label>
-<input type="number" name="amount" id="amount"><br>
-
-<label for="residual">残価</label>
-<input type="number" name="residual" id="residual"><br>
-
-<label for="others">その他</label>
-<input type="text" name="others" id="others"><br> -->
