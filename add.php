@@ -49,10 +49,10 @@
             <label for="amortization_period">償却期間（年）</label>
             <input type="number" name="amortization_period" id="amortization_period"><br>
 
-            <label for="amount">取得価額</label>
+            <label for="acquisition_cost">取得価額</label>
             <input type="number" name="acquisition_cost" id="acquisition_cost"><br>
 
-            <label for="residual">残価</label>
+            <label for="residual_value">残価</label>
             <input type="number" name="residual_value" id="residual_value"><br>
 
             <label for="others">その他</label>

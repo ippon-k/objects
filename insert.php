@@ -9,12 +9,17 @@
  */
 
 //1. POSTデータ取得
-$name = $_POST['name'];
-$category = $_POST['category'];
-$date = $_POST['date'];
+$name = $_POST['name']; //品名
+$category = $_POST['category']; //カテゴリー
+$date = $_POST['date']; //購入日
 // var_dump($date);
-$place = $_POST['place'];
-$check1 = $_POST['check1'];
+$place = $_POST['place']; //保管場所
+$check1 = $_POST['check1']; //チェックポイント
+$control_num = $_POST['control_num']; //管理番号
+$amortization_period = $_POST['amortization_period']; //償却期間
+$acquisition_cost = $_POST['acquisition_cost']; //仕入価額
+$residual_value = $_POST['residual_value']; //残価
+$others = $_POST['others']; //その他
 
 //2. DB接続します
 try {
@@ -29,8 +34,10 @@ try {
 // 1. SQL文を用意
 $stmt = $pdo->prepare(
     'INSERT INTO
-    gs_bm_table(id, name, category, date, place, check1)
-    VALUES (NULL,:name,:category,:date,:place,:check1)'
+    gs_bm_table(id, name, category, date, place,
+    check1, control_num, amortization_period, acquisition_cost, residual_value, others)
+    VALUES (NULL,:name,:category,:date,:place,
+    :check1,:control_num,:amortization_period,:acquisition_cost,:residual_value,:others)'
 );
 //  2. バインド変数を用意
 // Integer 数値の場合 PDO::PARAM_INT
@@ -40,6 +47,11 @@ $stmt->bindValue(':category', $category, PDO::PARAM_STR);
 $stmt->bindValue(':date', $date, PDO::PARAM_STR);
 $stmt->bindValue(':place', $place, PDO::PARAM_STR);
 $stmt->bindValue(':check1', $check1, PDO::PARAM_STR);
+$stmt->bindValue(':control_num', $control_num, PDO::PARAM_STR);
+$stmt->bindValue(':amortization_period', $amortization_period, PDO::PARAM_STR);
+$stmt->bindValue(':acquisition_cost', $acquisition_cost, PDO::PARAM_STR);
+$stmt->bindValue(':residual_value', $residual_value, PDO::PARAM_STR);
+$stmt->bindValue(':others', $others, PDO::PARAM_STR);
 
 // var_export($name . $category);
 // //  3. 実行

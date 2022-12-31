@@ -28,7 +28,7 @@ if ($status == false) {
     //Selectデータの数だけ自動でループしてくれる
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
-        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . $result['date'] . '/' . h($result['place']) . '/' . h($result['check1']) . '</p>'; // .=は追加処理
+        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . $result['date'] . '/' . h($result['place']) . '/' . h($result['check1']) . '/' . h($result['control_num']) . '/' . h($result['amortization_period']) . $result['acquisition_cost'] . '/' . h($result['residual_value']) . '/' . h($result['others']) . '</p>'; // .=は追加処理
     }
     // while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
     //     $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['date']) . '</p>'; // .=は追加処理
