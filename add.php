@@ -28,14 +28,14 @@
         </header>
         <h1>動産登録</h1>
         <form action="insert.php" method="post">
-            <label for="name">品名<span class="">※</span></label>
-            <input type="text" name="name" id="name"><br>
+            <label for="name">品名</label>
+            <input type="text" name="name" id="name" required><br>
 
             <label for="category">品目</label>
-            <input type="text" name="category" id="category"><br>
+            <input type="text" name="category" id="category" required><br>
 
             <label for="purchase">購入日</label>
-            <input type="date" name="date" id="date"><br>
+            <input type="date" name="date" id="date" required><br>
 
             <label for="place">保管場所</label>
             <input type="text" name="place" id="place"><br>
