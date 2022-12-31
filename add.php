@@ -28,7 +28,7 @@
         </header>
         <h1>動産登録</h1>
         <form action="insert.php" method="post">
-            <label for="name">品名</label>
+            <label for="name">品名<span class="">※</span></label>
             <input type="text" name="name" id="name"><br>
 
             <label for="category">品目</label>
@@ -52,7 +52,7 @@
             <label for="acquisition_cost">取得価額</label>
             <input type="number" name="acquisition_cost" id="acquisition_cost"><br>
 
-            <label for="residual_value">残価</label>
+            <label for="residual_value">最終残価率</label>
             <input type="number" name="residual_value" id="residual_value"><br>
 
             <label for="others">その他</label>
