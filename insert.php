@@ -18,7 +18,7 @@ $check1 = $_POST['check1']; //チェックポイント
 $control_num = $_POST['control_num']; //管理番号
 $amortization_period = $_POST['amortization_period']; //償却期間
 $acquisition_cost = $_POST['acquisition_cost']; //仕入価額
-$residual_value = $_POST['residual_value']; //残価
+$residual_value = $_POST['residual_value']; //最終残価率
 $others = $_POST['others']; //その他
 
 //2. DB接続します
