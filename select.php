@@ -70,7 +70,23 @@ if ($status == false) {
 
     <!-- Main[Start] -->
     <div>
-        <div class="container jumbotron"><?= $view ?></div>
+        <div class="container jumbotron">
+            <table>
+                <tr>
+                    <th>品名</th>
+                    <th>カテゴリ</th>
+                    <th>購入日</th>
+                    <th>保管場所</th>
+                    <th>チェックポイント</th>
+                    <th>管理番号</th>
+                    <th>償却期間</th>
+                    <th>取得価額</th>
+                    <th>最終残価</th>
+                    <th>その他</th>
+                </tr>
+                <?= $view ?>
+            </table>
+        </div>
     </div>
     <!-- Main[End] -->
     <button><a href="index.html">to menu</a></button>
