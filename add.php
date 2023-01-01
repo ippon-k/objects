@@ -31,7 +31,7 @@
             <label for="name">品名</label>
             <input type="text" name="name" id="name" required><br>
 
-            <label for="category">品目</label>
+            <label for="category">カテゴリ</label>
             <input type="text" name="category" id="category" required><br>
 
             <label for="purchase">購入日</label>
