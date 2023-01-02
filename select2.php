@@ -29,23 +29,11 @@ if ($status == false) {
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
 
-        $view .= '<tr><td><a href="select2.php?id=' . $result['id'] . '">
-';
-        $view .= h($result['name']);
-        $view .= '</a></td><td>';
-        $view .= h($result['category']);
-        $view .= '</td><td>';
-        $view .= h($result['date']);
-        $view .= '</td><td>';
-        $view .= h($result['place']);
-        $view .= '</td><td>';
-        $view .= h($result['amortization_period']);
-        $view .= '</td><td>';
-        $view .= h($result['residual_value']);
-        $view .= '</td></tr>';
+        $view .= '<tr><td>' . $result['id'] . '</td><td>' . h($result['name']) . '</td><td>' . h($result['category']) . '</td><td>' . $result['date'] . '</td><td>' . h($result['place']) . '</td><td>' . h($result['check1']) . '</td><td>' . h($result['control_num']) . '</td><td>' . h($result['amortization_period']) . '</td><td>'  . h($result['acquisition_cost']) . '</td><td>' . h($result['residual_value']) . '</td><td>' . h($result['others']) . '</td></tr>';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -84,12 +72,17 @@ if ($status == false) {
         <div class="container jumbotron">
             <table class="table1">
                 <tr>
+                    <th>ID</th>
                     <th>品名</th>
                     <th>カテゴリ</th>
                     <th>購入日</th>
                     <th>保管場所</th>
+                    <th>次回確認</th>
+                    <th>管理番号</th>
                     <th>償却期間</th>
                     <th>取得価額</th>
+                    <th>最終残価</th>
+                    <th>その他</th>
                 </tr>
                 <?= $view ?>
             </table>

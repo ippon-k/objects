@@ -1,0 +1,46 @@
+@media(max-width: 640px) {
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .table1 {
+    font-size: 12px;
+  }
+
+  .table1 th,
+  .table1 td {
+    padding: 0.3em;
+  }
+}
+
+.table1 {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table1 th,
+.table1 td {
+  border: 1px solid #000;
+  /*セルの境界*/
+  padding: 0.5em;
+  /* セルの余白 */
+}
+
+.table1 th {
+  background-color: goldenrod;
+  color: white;
+}
+
+.table1 tr:nth-child(odd) {
+  background-color: white;
+}
+
+.table1 tr:nth-child(even) {
+  background-color: rgb(176, 176, 176);
+}
+
+.table1 tr:hover {
+  background-color: rgb(244, 139, 3);
+  font-weight: bold;
+}
