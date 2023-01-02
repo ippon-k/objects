@@ -28,7 +28,8 @@ if ($status == false) {
     //Selectデータの数だけ自動でループしてくれる
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
-        $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . $result['date'] . '/' . h($result['place']) . '/' . h($result['check1']) . '/' . h($result['control_num']) . '/' . h($result['amortization_period']) . '/'  . h($result['acquisition_cost']) . '/' . h($result['residual_value']) . '/' . h($result['others']) . '</p>'; // .=は追加処理
+        // $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . $result['date'] . '/' . h($result['place']) . '/' . h($result['check1']) . '/' . h($result['control_num']) . '/' . h($result['amortization_period']) . '/'  . h($result['acquisition_cost']) . '/' . h($result['residual_value']) . '/' . h($result['others']) . '</p>'; // .=は追加処理
+        $view .= '<tr><td>' . $result['id'] . '</td><td>' . h($result['name']) . '</td><td>' . h($result['category']) . '</td><td>' . $result['date'] . '</td><td>' . h($result['place']) . '</td><td>' . h($result['check1']) . '</td><td>' . h($result['control_num']) . '/' . h($result['amortization_period']) . '</td><td>'  . h($result['acquisition_cost']) . '</td><td>' . h($result['residual_value']) . '</td><td>' . h($result['others']) . '</td></tr>';
     }
     // while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
     //     $view .= '<p>' . $result['id'] . '/' . h($result['name']) . '/' . h($result['category']) . '/' . h($result['date']) . '</p>'; // .=は追加処理
@@ -77,7 +78,7 @@ if ($status == false) {
                     <th>カテゴリ</th>
                     <th>購入日</th>
                     <th>保管場所</th>
-                    <th>チェックポイント</th>
+                    <th>次回確認</th>
                     <th>管理番号</th>
                     <th>償却期間</th>
                     <th>取得価額</th>
