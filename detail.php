@@ -60,14 +60,14 @@ if ($status === false) {
             </nav>
         </header>
         <h1>動産登録</h1>
-        <form action="insert.php" method="post">
-            <label for="name">品名</label><br>
+        <form action="update.php" method="post">
+            <label for="name">品名※</label><br>
             <input type="text" name="name" id="name" required value="<?= $result['name'] ?>"><br>
 
-            <label for="category">カテゴリ</label><br>
+            <label for="category">カテゴリ※</label><br>
             <input type="text" name="category" id="category" required value="<?= $result['category'] ?>"><br>
 
-            <label for="purchase">購入日</label><br>
+            <label for="purchase">購入日※</label><br>
             <input type="date" name="date" id="date" required value="<?= $result['date'] ?>"><br>
 
             <label for="place">保管場所</label><br>
@@ -91,9 +91,11 @@ if ($status === false) {
             <label for="others">その他</label><br>
             <input type="text" name="others" id="others" value="<?= $result['others'] ?>"><br>
 
-            <input type="submit" value="send">
+            <input type="hidden" name="id" id="control_num" value="<?= $result['id'] ?>"><br>
+
+            <input type="submit" value="update">
         </form>
-        <p><a href="index.html">return</a></p>
+        <p><a href="select.php">return</a></p>
     </div>
 </body>
 
