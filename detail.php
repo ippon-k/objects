@@ -1,5 +1,7 @@
 <?php
 
+$id = $_GET['id'];
+
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES);
@@ -15,10 +17,23 @@ try {
 }
 
 //２．データ取得SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_bm_table;");
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE id = :id;");
+$stmt->bindValue(':id', $ic, PDO::PARAM_INT);
+
 $status = $stmt->execute();
 
-//３．データ表示
+//４．データ登録処理後
+if ($status === false) {
+    //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
+    $error = $stmt->errorInfo();
+    exit('ErrorMessage:' . $error[2]);
+} else {
+    //データが取得できた場合の処理
+    $result = $stmt->fetch();
+}
+
+// -------------------------------
+//データ表示
 $view = "";
 if ($status == false) {
     //execute（SQL実行時にエラーがある場合）

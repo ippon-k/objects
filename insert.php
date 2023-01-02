@@ -47,10 +47,10 @@ $stmt->bindValue(':category', $category, PDO::PARAM_STR);
 $stmt->bindValue(':date', $date, PDO::PARAM_STR);
 $stmt->bindValue(':place', $place, PDO::PARAM_STR);
 $stmt->bindValue(':check1', $check1, PDO::PARAM_STR);
-$stmt->bindValue(':control_num', $control_num, PDO::PARAM_STR);
-$stmt->bindValue(':amortization_period', $amortization_period, PDO::PARAM_STR);
-$stmt->bindValue(':acquisition_cost', $acquisition_cost, PDO::PARAM_STR);
-$stmt->bindValue(':residual_value', $residual_value, PDO::PARAM_STR);
+$stmt->bindValue(':control_num', $control_num, PDO::PARAM_INT);
+$stmt->bindValue(':amortization_period', $amortization_period, PDO::PARAM_INT);
+$stmt->bindValue(':acquisition_cost', $acquisition_cost, PDO::PARAM_INT);
+$stmt->bindValue(':residual_value', $residual_value, PDO::PARAM_INT);
 $stmt->bindValue(':others', $others, PDO::PARAM_STR);
 
 // var_export($name . $category);
