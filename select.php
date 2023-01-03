@@ -29,8 +29,7 @@ if ($status == false) {
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
 
-        $view .= '<tr><td><a href="detail.php?id=' . $result['id'] . '">
-';
+        $view .= '<tr><td><a href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['name']);
         $view .= '</a></td><td>';
         $view .= h($result['category']);
@@ -42,6 +41,8 @@ if ($status == false) {
         $view .= h($result['amortization_period']);
         $view .= '</td><td>';
         $view .= h($result['residual_value']);
+        $view .= '</td><td>';
+        $view .= '<a class=delete href="delete.php?id=' . $result['id'] . '">削除</a>';
         $view .= '</td></tr>';
     }
 }
