@@ -8,11 +8,13 @@ function h($str)
 
 //1.  DB接続します
 try {
-    //Password:MAMP='root',XAMPP=''
+    //ID:'root', Password: xamppは 空白 ''
     $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
 } catch (PDOException $e) {
-    exit('DBConnectError' . $e->getMessage());
+    exit('DBConnectError:' . $e->getMessage());
 }
+// require_once('funcs.php');
+// $pdo = db_conn();
 
 //２．データ取得SQL作成
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table;");
@@ -91,6 +93,7 @@ if ($status == false) {
                     <th>保管場所</th>
                     <th>償却期間</th>
                     <th>取得価額</th>
+                    <th>項目削除</th>
                 </tr>
                 <?= $view ?>
             </table>

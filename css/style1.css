@@ -44,3 +44,25 @@
   background-color: rgb(244, 139, 3);
   font-weight: bold;
 }
+
+.table1 tr>*:last-child {
+  /* background-color: rgb(214, 187, 240); */
+  width: 10%;
+  color: rgb(90, 41, 24);
+}
+
+.delete {
+  background-color: black;
+  color: white;
+  display: block;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.delete:hover {
+  font-weight: bold;
+  color: black;
+  background-color: crimson;
+}
