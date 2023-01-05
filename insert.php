@@ -21,7 +21,7 @@ $acquisition_cost = $_POST['acquisition_cost']; //仕入価額
 $residual_value = $_POST['residual_value']; //最終残価率
 $others = $_POST['others']; //その他
 
-//2. DB接続します
+// 2. DB接続します
 function db_conn()
 {
     try {
@@ -32,8 +32,8 @@ function db_conn()
     }
     return $pdo;
 }
+require_once('funcs.php');
 $pdo = db_conn();
-// require_once('funcs.php');
 // $pdo = db_conn();
 
 // //３．データ登録SQL作成
