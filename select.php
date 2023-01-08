@@ -75,7 +75,7 @@ if ($status == false) {
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="add.php">動産表示</a>
+                    <a class="navbar-brand" href="add.php">動産一覧</a>
                 </div>
             </div>
         </nav>
