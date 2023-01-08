@@ -12,6 +12,7 @@ function db_conn()
     try {
         //ID:'root', Password: xamppは 空白 ''
         $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
+        return $pdo;
     } catch (PDOException $e) {
         exit('DBConnectError:' . $e->getMessage());
     }
