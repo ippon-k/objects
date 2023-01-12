@@ -13,6 +13,7 @@ try {
 } catch (PDOException $e) {
     exit('DBConnectError:' . $e->getMessage());
 }
+
 // require_once('funcs.php');
 // $pdo = db_conn();
 
@@ -31,19 +32,19 @@ if ($status == false) {
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) { //一行とってくるよ
 
-        $view .= '<tr><td><a href="detail.php?id=' . $result['id'] . '">';
+        $view .= '<tr><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['name']);
-        $view .= '</a></td><td>';
+        $view .= '</a></td><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['category']);
-        $view .= '</td><td>';
+        $view .= '</a></td><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['date']);
-        $view .= '</td><td>';
+        $view .= '</a></td><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['place']);
-        $view .= '</td><td>';
+        $view .= '</a></td><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['amortization_period']);
-        $view .= '</td><td>';
+        $view .= '</a></td><td><a class=wide_link href="detail.php?id=' . $result['id'] . '">';
         $view .= h($result['residual_value']);
-        $view .= '</td><td>';
+        $view .= '</a></td><td>';
         $view .= '<a class=delete href="delete.php?id=' . $result['id'] . '">削除</a>';
         $view .= '</td></tr>';
     }

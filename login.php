@@ -15,6 +15,8 @@
     <title>ログイン</title>
 </head>
 
+<!-- $_SESSIONに入っているものはsession_start()を記述したファイルで共有される -->
+
 <body>
 
     <header>
@@ -24,7 +26,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">データ登録</a>
+                    <a class="navbar-brand" href="index.html">データ登録</a>
                 </div>
             </div>
         </nav>

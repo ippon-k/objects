@@ -17,3 +17,20 @@ function db_conn()
         exit('DBConnectError:' . $e->getMessage());
     }
 }
+
+//ログインチェック処理
+function loginCheck()
+{
+    //セッションIDを持っていたらOK
+    // 持っていなければ閲覧できない処理にする
+    //  ISSETは値があるかどうか確認するメソッド
+
+    if (!isset($_SESSION['chk_ssid']) || $_SESSION['chk_ssid'] != session_id()) {
+        //ログインがおかしい
+        exit('login error');
+    } else {
+        //ログインOK
+        session_regenerate_id(true);
+        $_SESSION['chk_ssid'] = session_id();
+    }
+}

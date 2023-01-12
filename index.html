@@ -14,20 +14,18 @@
   <header>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="add.php">objects</a>
-          <a href="login.php">ログイン</a>
-        </div>
+        <div class="navbar-header"><a class="navbar-brand" href="">objects</a></div>
+        <div class="navbar-header"><a class="navbar-brand" href="login.php">ログイン</a></div>
+        <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div>
       </div>
-    </nav>
   </header>
   <div>
     <form action="objects.php" method="post">
       <label for="menu">メニューを選択して下さい</label>
       <select name="menu" id="menu">
-        <option value="1">1:資産を登録する</option>
-        <option value="2">2:資産を表示する</option>
-        <option value="9">9:終了する</option>
+        <option value="1">1:資産を登録</option>
+        <option value="2">2:資産を表示</option>
+        <option value="9">9:終了</option>
       </select>
       <input type="submit" value="send">
     </form>

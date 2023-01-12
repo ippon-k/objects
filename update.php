@@ -7,6 +7,20 @@
  * 3. 受け取ったデータをバインド変数に与えてください。
  * 4. index.phpフォームに書き込み、送信を行ってみて、実際にPhpMyAdminを確認してみてください！
  */
+// セッション開始
+session_start();
+
+// セッションIDを持っていたらOK。
+// 持っていなければ閲覧できない処理にする
+// ISSETは値があるかどうか確認するメソッド
+if (!isset($_SESSION['chk_ssid']) || $_SESSION['chk_ssid'] != session_id()) {
+    // ログインできない
+    exit('login error');
+} else {
+    //ログインOK
+    session_regenerate_id(true);
+    $_SESSION['chk_ssid'] = session_id();
+}
 
 //1. POSTデータ取得
 $name = $_POST['name']; //品名
@@ -29,6 +43,8 @@ try {
 } catch (PDOException $e) {
     exit('DBConnectError:' . $e->getMessage());
 }
+// require_once('funcs.php');
+// $pdo = db_conn();
 
 // //３．データ登録SQL作成
 

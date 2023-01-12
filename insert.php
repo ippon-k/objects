@@ -1,5 +1,11 @@
 <?php
 
+require_once('funcs.php');
+// 0.session
+session_start();
+
+loginCheck();
+
 /**
  * 1. index.phpのフォームの部分がおかしいので、ここを書き換えて、
  * insert.phpにPOSTでデータが飛ぶようにしてください。
@@ -24,16 +30,15 @@ $others = $_POST['others']; //その他
 // 2. DB接続します
 // function db_conn()
 // {
-// try {
-//     //ID:'root', Password: xamppは 空白 ''
-//     $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
-// } catch (PDOException $e) {
-//     exit('DBConnectError:' . $e->getMessage());
+try {
+    //ID:'root', Password: xamppは 空白 ''
+    $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
+} catch (PDOException $e) {
+    exit('DBConnectError:' . $e->getMessage());
+}
 // }
-// return $pdo;
-// }
-require_once('funcs.php');
-$pdo = db_conn();
+// require_once('funcs.php');
+// $pdo = db_conn();
 
 // //３．データ登録SQL作成
 

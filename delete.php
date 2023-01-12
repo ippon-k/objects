@@ -1,15 +1,17 @@
 <?php
 
+require_once('funcs.php');
+// 0.session
+session_start();
+
+loginCheck();
+
 //1. POSTデータ取得
 $id = $_GET['id']; //その他
 
 //2. DB接続します
-try {
-    //ID:'root', Password: xamppは 空白 ''
-    $pdo = new PDO('mysql:dbname=objects;charset=utf8;host=localhost', 'root', '');
-} catch (PDOException $e) {
-    exit('DBConnectError:' . $e->getMessage());
-}
+
+$pdo = db_conn();
 
 // //３．データ登録SQL作成
 

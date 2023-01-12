@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2023 年 1 月 05 日 13:15
+-- 生成日時: 2023 年 1 月 12 日 13:58
 -- サーバのバージョン： 10.4.21-MariaDB
 -- PHP のバージョン: 8.1.6
 
@@ -55,8 +55,7 @@ INSERT INTO `gs_bm_table` (`id`, `name`, `category`, `date`, `place`, `check1`, 
 (8, 'マイバッハ', '車両運搬具', '2022-12-27', '地下', '2023-12-27', 0, 0, 0, 0, ''),
 (11, 'mac', 'pc', '2023-01-03', '自宅', '2024-01-03', 12, 3, 176000, 1, ''),
 (12, 'iPhone12', '通信機器', '2023-01-05', 'ポッケ', '2024-01-05', 123, 3, 100000, 20, ''),
-(13, 'タンブラー', '消耗品', '2023-01-05', '机上', '2024-01-05', 124, 1, 2000, 0, ''),
-(14, 'aa', '車両運搬具', '2023-01-05', '自宅', '2023-01-07', 1, 1, 1, 1, '');
+(13, 'タンブラー', '消耗品', '2023-01-05', '机上', '2024-01-05', 124, 1, 3000, 0, '');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -76,7 +75,7 @@ ALTER TABLE `gs_bm_table`
 -- テーブルの AUTO_INCREMENT `gs_bm_table`
 --
 ALTER TABLE `gs_bm_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

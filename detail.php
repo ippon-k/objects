@@ -1,11 +1,29 @@
 <?php
 
+// 0.session
+session_start();
+
+//セッションIDを持っていたらOK
+// 持っていなければ閲覧できない処理にする
+//  ISSETは値があるかどうか確認するメソッド
+
+// if (!isset($_SESSION['chk_ssid']) || $_SESSION['chk_ssid'] != session_id()) {
+//     //ログインがおかしい
+//     exit('login error');
+// } else {
+//     //ログインOK
+//     session_regenerate_id(true);
+//     $_SESSION['chk_ssid'] = session_id();
+// }
+require_once('funcs.php');
+loginCheck();
+
 $id = $_GET['id'];
 
-function h($str)
-{
-    return htmlspecialchars($str, ENT_QUOTES);
-}
+// function h($str)
+// {
+//     return htmlspecialchars($str, ENT_QUOTES);
+// }
 
 
 //1.  DB接続します
@@ -15,6 +33,8 @@ try {
 } catch (PDOException $e) {
     exit('DBConnectError' . $e->getMessage());
 }
+// require_once('funcs.php');
+// $pdo = db_conn();
 
 //２．データ取得SQL作成
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE id = :id;");
