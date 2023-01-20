@@ -1,5 +1,7 @@
 <?php
 
+require_once('head_parts.php');
+
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES);
@@ -55,13 +57,7 @@ if ($status == false) {
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>動産一覧</title>
-    <link rel="stylesheet" href="css/range.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style1.css">
+    <?= head_parts('動産') ?>
     <style>
         div {
             padding: 10px;
