@@ -14,6 +14,19 @@ loginCheck();
  * 3. 受け取ったデータをバインド変数に与えてください。
  * 4. index.phpフォームに書き込み、送信を行ってみて、実際にPhpMyAdminを確認してみてください！
  */
+if (isset($_FILES['img']['name'])) {
+    $file_name = $_SESSION['post']['file_name'] = $_FILES['img']['name']; //タイトルを取得
+
+    $image_data = $_SESSION['post']['image_data'] = file_get_contents($_FILES['img']['tmp_name']); //データを取得
+
+    $image_type = $_SESSION['post']['image_type'] = exif_imagetype($_FILES['img']['tmp_name']); //イメージタイプを確認する
+} else {
+    $file_name = $_SESSION['post']['file_name'] = ''; //タイトルを取得
+
+    $image_data = $_SESSION['post']['image_data'] = ''; //データを取得
+
+    $image_type = $_SESSION['post']['image_type'] = ''; //イメージタイプを確認する
+}
 
 //1. POSTデータ取得
 $name = $_POST['name']; //品名
@@ -28,21 +41,9 @@ $acquisition_cost = $_POST['acquisition_cost']; //仕入価額
 $residual_value = $_POST['residual_value']; //最終残価率
 $others = $_POST['others']; //その他
 
-var_dump($_POST);
-var_dump($_FILES); //画像はpost送信されないの？
-
-if (isset($_FILES['img']['name'])) {
-    $file_name = $_SESSION['post']['file_name'] = $_FILES['img']['name']; //タイトルを取得
-
-    $image_data = $_SESSION['post']['image_data'] = file_get_contents($_FILES['img']['tmp_name']); //データを取得
-
-    $image_type = $_SESSION['post']['image_type'] = exif_imagetype($_FILES['img']['tmp_name']); //イメージタイプを確認する
-} else {
-    $file_name = $_SESSION['post']['file_name'] = ''; //タイトルを取得
-
-    $image_data = $_SESSION['post']['image_data'] = ''; //データを取得
-
-    $image_type = $_SESSION['post']['image_type'] = ''; //イメージタイプを確認する
+if (isset($_SESSION['post']['image_data'])) {
+    $img = date('YmdHis') . '_' . $_SESSION['post']['file_name']; //ファイル名被り防止
+    file_put_contents("images/$img", $_SESSION['post']['image_data']);
 }
 
 //バリデーション処理
@@ -100,4 +101,9 @@ if ($status === false) {
 } else {
     //５．index.phpへリダイレクト
     header('Location: index.html');
+    // var_dump($_POST);
+    // var_dump($_SESSION['post']['file_name']);
+    // var_dump($_SESSION['post']['image_data']);
+    // var_dump($_SESSION['post']['image_type']);
+
 }
