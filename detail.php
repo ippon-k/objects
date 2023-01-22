@@ -16,6 +16,7 @@ session_start();
 //     $_SESSION['chk_ssid'] = session_id();
 // }
 require_once('funcs.php');
+require_once('head_parts.php');
 loginCheck();
 
 $id = $_GET['id'];
@@ -59,13 +60,7 @@ if ($status === false) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="style1.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>objects</title>
+    <?= head_parts('objects') ?>
 </head>
 
 <body>
@@ -112,6 +107,19 @@ if ($status === false) {
             <input type="text" name="others" id="others" value="<?= $result['others'] ?>"><br>
 
             <input type="hidden" name="id" id="control_num" value="<?= $result['id'] ?>"><br>
+
+            <label for="title">画像</label><br>
+            <input type="file" name="img"><br>
+
+
+            <?php if ($image_data) : ?><!-- 写真データがあれば -->
+                <!-- 写真を表示してください -->
+                <div class="mb-3">
+                    <img src="image.php" alt="">
+                </div>
+            <?php endif; ?>
+
+
 
             <input type="submit" value="update">
         </form>

@@ -1,11 +1,18 @@
+<?php
+
+require_once('head_parts.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <!-- <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/main.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <?= head_parts('objects') ?>
     <style>
         div {
             padding: 10px;

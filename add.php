@@ -1,17 +1,20 @@
 <?php
 
+require_once('head_parts.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="style1.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>objects</title>
+    <title>objects</title> -->
+    <?= head_parts('objects') ?>
+
 </head>
 
 <body>
@@ -26,7 +29,11 @@
             </nav>
         </header>
         <h1>動産登録</h1>
-        <form action="insert.php" method="post">
+        <?php if (isset($_GET['error'])) : ?>
+            <p class="text-danger">記入内容を確認してください</p>
+
+        <?php endif ?>
+        <form action="insert.php" method="post" enctype="multipart/form-data">
             <label for="name">品名</label><br>
             <input type="text" name="name" id="name" required><br>
 
@@ -54,8 +61,12 @@
             <label for="residual_value">最終残価率</label><br>
             <input type="number" name="residual_value" id="residual_value"><br>
 
+            <label for="title">画像</label><br>
+            <input type="file" name="img"><br>
+
             <label for="others">その他</label><br>
             <input type="text" name="others" id="others"><br>
+
 
             <input type="submit" value="send">
         </form>

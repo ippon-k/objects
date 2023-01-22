@@ -1,6 +1,7 @@
 <?php
 
 require_once('funcs.php');
+
 // 0.session
 session_start();
 
@@ -26,6 +27,28 @@ $amortization_period = $_POST['amortization_period']; //償却期間
 $acquisition_cost = $_POST['acquisition_cost']; //仕入価額
 $residual_value = $_POST['residual_value']; //最終残価率
 $others = $_POST['others']; //その他
+
+var_dump($_POST);
+var_dump($_FILES); //画像はpost送信されないの？
+
+if (isset($_FILES['img']['name'])) {
+    $file_name = $_SESSION['post']['file_name'] = $_FILES['img']['name']; //タイトルを取得
+
+    $image_data = $_SESSION['post']['image_data'] = file_get_contents($_FILES['img']['tmp_name']); //データを取得
+
+    $image_type = $_SESSION['post']['image_type'] = exif_imagetype($_FILES['img']['tmp_name']); //イメージタイプを確認する
+} else {
+    $file_name = $_SESSION['post']['file_name'] = ''; //タイトルを取得
+
+    $image_data = $_SESSION['post']['image_data'] = ''; //データを取得
+
+    $image_type = $_SESSION['post']['image_type'] = ''; //イメージタイプを確認する
+}
+
+//バリデーション処理
+// if (trim($name) === '' || trim($date) === '') {
+//     redirect('add.php?error');
+// }
 
 // 2. DB接続します
 // function db_conn()

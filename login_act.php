@@ -3,6 +3,7 @@
 //最初にSESSIONを開始！！ココ大事！！
 session_start();
 
+
 //POST値を受け取る
 $lid = $_POST['lid'];
 $lpw = $_POST['lpw'];
