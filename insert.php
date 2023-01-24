@@ -14,7 +14,9 @@ loginCheck();
  * 3. 受け取ったデータをバインド変数に与えてください。
  * 4. index.phpフォームに書き込み、送信を行ってみて、実際にPhpMyAdminを確認してみてください！
  */
-if (isset($_FILES['img']['name'])) {
+
+//  画像ファイルが入力されていたら
+if ($_FILES['img']['name'] !== "") {
     $file_name = $_SESSION['post']['file_name'] = $_FILES['img']['name']; //タイトルを取得
 
     $image_data = $_SESSION['post']['image_data'] = file_get_contents($_FILES['img']['tmp_name']); //データを取得
@@ -28,6 +30,7 @@ if (isset($_FILES['img']['name'])) {
     $image_type = $_SESSION['post']['image_type'] = ''; //イメージタイプを確認する
 }
 
+
 //1. POSTデータ取得
 $name = $_POST['name']; //品名
 $category = $_POST['category']; //カテゴリー
@@ -39,9 +42,11 @@ $control_num = $_POST['control_num']; //管理番号
 $amortization_period = $_POST['amortization_period']; //償却期間
 $acquisition_cost = $_POST['acquisition_cost']; //仕入価額
 $residual_value = $_POST['residual_value']; //最終残価率
+$img = ''; //画像
 $others = $_POST['others']; //その他
 
-if (isset($_SESSION['post']['image_data'])) {
+// macはimagesフォルダの書き込み権限を変更してください。
+if ($_SESSION['post']['image_data'] !== "") {
     $img = date('YmdHis') . '_' . $_SESSION['post']['file_name']; //ファイル名被り防止
     file_put_contents("images/$img", $_SESSION['post']['image_data']);
 }
@@ -70,9 +75,9 @@ try {
 $stmt = $pdo->prepare(
     'INSERT INTO
     gs_bm_table(id, name, category, date, place,
-    check1, control_num, amortization_period, acquisition_cost, residual_value, others)
+    check1, control_num, amortization_period, acquisition_cost, residual_value, img, others)
     VALUES (NULL,:name,:category,:date,:place,
-    :check1,:control_num,:amortization_period,:acquisition_cost,:residual_value,:others)'
+    :check1,:control_num,:amortization_period,:acquisition_cost,:residual_value,:img,:others)'
 );
 //  2. バインド変数を用意
 // Integer 数値の場合 PDO::PARAM_INT
@@ -86,6 +91,7 @@ $stmt->bindValue(':control_num', $control_num, PDO::PARAM_INT);
 $stmt->bindValue(':amortization_period', $amortization_period, PDO::PARAM_INT);
 $stmt->bindValue(':acquisition_cost', $acquisition_cost, PDO::PARAM_INT);
 $stmt->bindValue(':residual_value', $residual_value, PDO::PARAM_INT);
+$stmt->bindValue(':img', $img, PDO::PARAM_STR);
 $stmt->bindValue(':others', $others, PDO::PARAM_STR);
 
 // var_export($name . $category);

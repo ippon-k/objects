@@ -75,7 +75,7 @@ if ($status === false) {
             </nav>
         </header>
         <h1>動産登録</h1>
-        <form action="update.php" method="post">
+        <form action="update.php" method="post" enctype="multipart/form-data">
             <label for="name">品名※</label><br>
             <input type="text" name="name" id="name" required value="<?= $result['name'] ?>"><br>
 
@@ -112,7 +112,7 @@ if ($status === false) {
             <input type="file" name="img"><br>
 
 
-            <?php if ($image_data) : ?><!-- 写真データがあれば -->
+            <?php if ($result['img']) : ?><!-- 写真データがあれば -->
                 <!-- 写真を表示してください -->
                 <div class="mb-3">
                     <img src="image.php" alt="">
