@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2023 年 1 月 12 日 13:58
+-- 生成日時: 2023 年 1 月 24 日 13:35
 -- サーバのバージョン： 10.4.21-MariaDB
 -- PHP のバージョン: 8.1.6
 
@@ -38,6 +38,7 @@ CREATE TABLE `gs_bm_table` (
   `amortization_period` int(3) DEFAULT NULL,
   `acquisition_cost` int(24) DEFAULT NULL,
   `residual_value` int(24) DEFAULT NULL,
+  `img` varchar(256) CHARACTER SET utf8 DEFAULT NULL COMMENT '画像のPATH',
   `others` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -45,17 +46,19 @@ CREATE TABLE `gs_bm_table` (
 -- テーブルのデータのダンプ `gs_bm_table`
 --
 
-INSERT INTO `gs_bm_table` (`id`, `name`, `category`, `date`, `place`, `check1`, `control_num`, `amortization_period`, `acquisition_cost`, `residual_value`, `others`) VALUES
-(1, 'パソコン', '電気機器', '2023-01-02', '机上', '2024-01-02', 0, 0, 0, 0, ''),
-(2, 'ウラカン', '車両運搬具', '2024-01-02', '自宅', '2024-01-02', 0, 0, 0, 0, ''),
-(3, 'カメラ', '映像機器', '2022-12-18', '自宅', '2024-01-02', 0, 0, 0, 0, ''),
-(4, 'くまモン', '着ぐるみ', '2022-12-18', '不明', '2023-01-02', 0, 0, 0, 0, ''),
-(5, 'カメラ', '映像機器', '2022-12-25', 'キャビネット', '2023-12-25', 0, 0, 0, 0, ''),
-(7, '夏目漱石', '人間', '1987-12-29', '熊本', '2023-12-29', 0, 0, 0, 0, ''),
-(8, 'マイバッハ', '車両運搬具', '2022-12-27', '地下', '2023-12-27', 0, 0, 0, 0, ''),
-(11, 'mac', 'pc', '2023-01-03', '自宅', '2024-01-03', 12, 3, 176000, 1, ''),
-(12, 'iPhone12', '通信機器', '2023-01-05', 'ポッケ', '2024-01-05', 123, 3, 100000, 20, ''),
-(13, 'タンブラー', '消耗品', '2023-01-05', '机上', '2024-01-05', 124, 1, 3000, 0, '');
+INSERT INTO `gs_bm_table` (`id`, `name`, `category`, `date`, `place`, `check1`, `control_num`, `amortization_period`, `acquisition_cost`, `residual_value`, `img`, `others`) VALUES
+(1, 'パソコン', '電気機器', '2023-01-02', '机上', '2024-01-02', 0, 0, 0, 0, NULL, ''),
+(2, 'ウラカン', '車両運搬具', '2024-01-02', '自宅', '2024-01-02', 0, 0, 0, 0, NULL, ''),
+(3, 'カメラ', '映像機器', '2022-12-18', '自宅', '2024-01-02', 0, 0, 0, 0, NULL, ''),
+(4, 'くまモン', '着ぐるみ', '2022-12-18', '不明', '2023-01-02', 0, 0, 0, 0, NULL, ''),
+(5, 'カメラ', '映像機器', '2022-12-25', 'キャビネット', '2023-12-25', 0, 0, 0, 0, NULL, ''),
+(7, '夏目漱石', '人間', '1987-12-29', '熊本', '2023-12-29', 0, 0, 0, 0, NULL, ''),
+(8, 'マイバッハ', '車両運搬具', '2022-12-27', '地下', '2023-12-27', 0, 0, 0, 0, NULL, ''),
+(11, 'mac', 'pc', '2023-01-03', '自宅', '2024-01-03', 12, 3, 176000, 1, NULL, ''),
+(12, 'iPhone12', '通信機器', '2023-01-05', 'ポッケ', '2024-01-05', 123, 3, 100000, 20, NULL, ''),
+(13, 'タンブラー', '消耗品', '2023-01-05', '机上', '2024-01-05', 124, 1, 3000, 0, '20230124132237_IMG_2302.PNG', ''),
+(28, 'fas', 'corp', '2023-01-22', '自宅', '2023-01-27', 126, 1, 1, 1, NULL, ''),
+(29, 'test', 'test', '2023-01-24', '不明', '2023-01-24', 126, 1, 1, 0, '20230124125826_dora_20.png', '');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -75,7 +78,7 @@ ALTER TABLE `gs_bm_table`
 -- テーブルの AUTO_INCREMENT `gs_bm_table`
 --
 ALTER TABLE `gs_bm_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
